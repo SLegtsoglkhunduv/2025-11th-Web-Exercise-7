@@ -1,1 +1,48 @@
-   <!-- Write your code here -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      *,
+      *:focus,
+      *:active,
+      *:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+  </head>
+  <body
+    id="pageBody"
+    class="bg-white min-h-screen flex items-center justify-center m-0 p-0 select-none"
+  >
+    <button
+      id="themeBtn"
+      onclick="toggleTheme()"
+      class="bg-[#eef0f2] hover:bg-[#e0e3e7] text-black border border-[#8f8f8f] px-6 py-2 text-xl font-normal rounded-none cursor-pointer"
+    >
+      Switch to Dark
+    </button>
+    <script>
+      let isDark = false;
+      function toggleTheme() {
+        const body = document.getElementById("pageBody");
+        const btn = document.getElementById("themeBtn");
+        isDark = !isDark;
+        if (isDark) {
+          body.classList.remove("bg-white");
+          body.classList.add("bg-[#222222]");
+          btn.textContent = "Switch to Light";
+        } else {
+          body.classList.remove("bg-[#222222]");
+          body.classList.add("bg-white");
+          btn.textContent = "Switch to Dark";
+        }
+      }
+    </script>
+  </body>
+</html>
