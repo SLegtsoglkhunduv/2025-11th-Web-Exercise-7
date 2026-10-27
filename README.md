@@ -26,6 +26,13 @@ When button is clicked, toggle between light and dark mode by changing:
 
 https://github.com/user-attachments/assets/4ed575eb-bd44-4fa9-b0ab-87453128484f
 
+## Exercise 4:
+
+Counter (click on multiple buttons)
+
+Task: Make a page with a number that starts at 0. A “+” button adds 1, a “-” button subtracts 1, and “Reset” sets it back to 0. If the number is negative, make it red.
+
+https://github.com/user-attachments/assets/f107af05-a12f-4170-8db3-dac4feda3ebe
 
 
 
