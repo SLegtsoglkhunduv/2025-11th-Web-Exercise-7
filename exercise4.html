@@ -1,1 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      *,
+      *:focus,
+      *:active,
+      *:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-white min-h-screen m-0 p-8 select-none font-serif">
+    <div class="flex flex-col items-start space-y-4">
+      <div
+        id="countDisplay"
+        class="text-7xl font-semibold text-black leading-none"
+      >
+        0
+      </div>
+      <div class="flex items-center space-x-2 font-sans">
+        <button
+          onclick="changeCount(-1)"
+          class="bg-[#efefef] hover:bg-[#e2e2e2] active:bg-[#d5d5d5] text-black border border-[#767676] px-4 py-1 text-xl rounded-none cursor-pointer min-w-[40px] text-center"
+        >
+          -
+        </button>
+        <button
+          onclick="changeCount(1)"
+          class="bg-[#efefef] hover:bg-[#e2e2e2] active:bg-[#d5d5d5] text-black border border-[#767676] px-4 py-1 text-xl rounded-none cursor-pointer min-w-[40px] text-center"
+        >
+          +
+        </button>
+        <button
+          onclick="resetCount()"
+          class="bg-[#efefef] hover:bg-[#e2e2e2] active:bg-[#d5d5d5] text-black border border-[#767676] px-5 py-1 text-xl rounded-none cursor-pointer"
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+    <script>
+      let count = 0;
+      function changeCount(delta) {
+        count += delta;
+        updateDisplay();
+      }
+      function resetCount() {
+        count = 0;
+        updateDisplay();
+      }
+      function updateDisplay() {
+        const display = document.getElementById("countDisplay");
+        display.textContent = count;
+        if (count < 0) {
+          display.classList.remove("text-black");
+          display.classList.add("text-red-600");
+        } else {
+          display.classList.remove("text-red-600");
+          display.classList.add("text-black");
+        }
+      }
+    </script>
+  </body>
+</html>
 
