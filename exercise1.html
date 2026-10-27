@@ -1,1 +1,40 @@
-        <!-- Write your code here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        button, button:focus, button:active, button:focus-visible {
+            outline: none !important;
+            box-shadow: none !important;
+            border-radius: 0px !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body id="page-body" class="bg-white min-h-screen flex items-center justify-center m-0 p-0 select-none">
+    <button 
+        id="bgToggleBtn"
+        onclick="toggleBackgroundColor()"
+        class="px-8 py-3 text-lg text-black bg-[#efefef] border border-[#767676] rounded-none hover:bg-[#e0e0e0] active:bg-[#d0d0d0] cursor-pointer outline-none focus:outline-none">
+        Change Background
+    </button>
+
+    <script>
+        let isBlue = false;
+        function toggleBackgroundColor() {
+            const body = document.getElementById('page-body');
+            
+            if (!isBlue) {
+                body.style.backgroundColor = '#b0d4e3';
+                isBlue = true;
+            } else {
+                body.style.backgroundColor = '#ffffff';
+                isBlue = false;
+            }
+        }
+    </script>
+</body>
+</html>
